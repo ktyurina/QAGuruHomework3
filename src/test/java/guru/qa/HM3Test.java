@@ -11,30 +11,37 @@ import static com.codeborne.selenide.Selectors.byText;
 
 public class HM3Test {
     @Test
-    void FillInfoTest() {
+    void fillInfoTest() {
         Configuration.pageLoadStrategy = "eager";
         open("https://demoqa.com/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
-        $("[id=firstName]").setValue("Tia");
-        $("[id=lastName]").setValue("Hawk");
-        $("[id=userEmail]").setValue("some@mail.com");
-        $("#genterWrapper").$(byText("Female")).click();// Очень интересно как выбрать другой чекбокс через $(".custom-control-label").click();
-        $("[id=userNumber]").setValue("1111111111");
-        $("[id=dateOfBirthInput]").click();
+        $("#firstName").setValue("Tia");
+        $("#lastName").setValue("Hawk");
+        $("#userEmail").setValue("some@mail.com");
+        $("#genterWrapper").$(byText("Female")).click();
+        $("#userNumber").setValue("1111111111");
+        $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("May");
         $(".react-datepicker__year-select").selectOption("1996");
         $(".react-datepicker__day--010").click();
-        $("[id=subjectsInput]").setValue("m").sendKeys(Keys.ENTER);
-        $("label[for='hobbies-checkbox-1").click();
-        $("label[for='hobbies-checkbox-2").click();
-        $("label[for='hobbies-checkbox-3").click();
-        $("[id=uploadPicture]").uploadFromClasspath("LogoAvia.png");
-        $("[id=currentAddress]").setValue("12345, Mars, 17");
-        $("[id=react-select-3-input]").setValue("Haryana").sendKeys(Keys.ENTER);
-        $("[id=react-select-4-input]").setValue("Karnal").sendKeys(Keys.ENTER);
-        $("[id=submit]").click();
+        $("#subjectsInput").setValue("m").sendKeys(Keys.ENTER);
+        $("#hobbiesWrapper").$(byText("Sports")).click();
+        $("#hobbiesWrapper").$(byText("Reading")).click();
+        $("#hobbiesWrapper").$(byText("Music")).click();
+        // $("label[for='hobbies-checkbox-1").click();
+        // $("label[for='hobbies-checkbox-2").click();
+        // $("label[for='hobbies-checkbox-3").click();
+        $("#uploadPicture").uploadFromClasspath("LogoAvia.png");
+        $("#currentAddress").setValue("12345, Mars, 17");
+        $("#state").click();
+        $("#stateCity-wrapper").$(byText("Haryana")).click();
+        $("#city").click();
+        $("#stateCity-wrapper").$(byText("Karnal")).click();
+        // $("#react-select-3-input").setValue("Haryana").pressEnter();
+        // $("#react-select-4-input").setValue("Karnal").pressEnter();
+        $("#submit").click();
 
 
         $(".modal-open").shouldBe(visible);
