@@ -16,6 +16,7 @@ public class HM3Test {
         open("https://demoqa.com/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
+       // Configuration.holdBrowserOpen = true;
 
         $("#firstName").setValue("Tia");
         $("#lastName").setValue("Hawk");
@@ -43,17 +44,27 @@ public class HM3Test {
         // $("#react-select-4-input").setValue("Karnal").pressEnter();
         $("#submit").click();
 
+        // Проверка
 
         $(".modal-open").shouldBe(visible);
-        $(".table").shouldHave(text("Tia Hawk"));
-        $(".table").shouldHave(text("some@mail.com"));
-        $(".table").shouldHave(text("1111111111"));
-        $(".table").shouldHave(text("10 May,1996"));
-        $(".table").shouldHave(text("Maths"));
-        $(".table").shouldHave(text("Sports, Reading, Music"));
-        $(".table").shouldHave(text("LogoAvia.png"));
-        $(".table").shouldHave(text("12345, Mars, 17"));
-        $(".table").shouldHave(text("Haryana Karnal"));
-
+        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Tia Hawk"));
+        // $(".table").shouldHave(text("Tia Hawk"));
+        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("some@mail.com"));
+        // $(".table").shouldHave(text("some@mail.com"));
+        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Female"));
+        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("1111111111"));
+        // $(".table").shouldHave(text("1111111111"));
+        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("10 May,1996"));
+        // $(".table").shouldHave(text("10 May,1996"));
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("Maths"));
+        // $(".table").shouldHave(text("Maths"));
+        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Sports, Reading, Music"));
+        // $(".table").shouldHave(text("Sports, Reading, Music"));
+        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("LogoAvia.png"));
+        // $(".table").shouldHave(text("LogoAvia.png"));
+        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("12345, Mars, 17"));
+        // $(".table").shouldHave(text("12345, Mars, 17"));
+        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("Haryana Karnal"));
+        // $(".table").shouldHave(text("Haryana Karnal"));
     }
 }
