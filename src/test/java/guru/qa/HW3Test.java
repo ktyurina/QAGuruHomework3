@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selectors.byText;
 
-public class HM3Test {
+public class HW3Test {
     @Test
     void fillInfoTest() {
         Configuration.pageLoadStrategy = "eager";
