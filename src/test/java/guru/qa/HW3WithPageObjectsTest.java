@@ -1,12 +1,12 @@
 package guru.qa;
 
 import org.junit.jupiter.api.Test;
-import pages.components.BaseComponent;
+import guru.qa.config.TestConfig;
 import pages.RegistrationPage;
 
-public class HW3WithPageObjectsTest extends BaseComponent {
+public class HW3WithPageObjectsTest extends TestConfig {
     RegistrationPage registrationPage = new RegistrationPage();
-    // Full test
+
     @Test
     void fillInfoWithPageObjectsTest() {
 
@@ -16,7 +16,7 @@ public class HW3WithPageObjectsTest extends BaseComponent {
                 .setEmail("ssss@ddd.aaa")
                 .setGender("Female")
                 .setNumber("11111111111")
-                .setDateOfBirth("10", "May", "1996")
+                .setDateOfBirth("31", "January", "2024")
                 .setSubject("English").setSubject("Computer")
                 .setHobbies("Reading").setHobbies("Music")
                 .setPicture("LogoAvia.png")
@@ -29,14 +29,14 @@ public class HW3WithPageObjectsTest extends BaseComponent {
                 .checkResult("Student Email", "ssss@ddd.aaa")
                 .checkResult("Gender", "Female")
                 .checkResult("Mobile", "1111111111")
-                .checkResult("Date of Birth", "10 May,1996")
+                .checkResult("Date of Birth", "31 January,2024")
                 .checkResult("Subjects", "English, Computer Science")
                 .checkResult("Hobbies", "Reading, Music")
                 .checkResult("Picture", "LogoAvia.png")
                 .checkResult("Address", "12345, Mars, 17")
                 .checkResult("State and City", "Haryana Karnal");
     }
-    // Minimal Test
+
     @Test
     void minimalFillTest(){
         registrationPage.openPage()
@@ -51,7 +51,7 @@ public class HW3WithPageObjectsTest extends BaseComponent {
                 .checkResult("Gender", "Female")
                 .checkResult("Mobile", "1111111111");
     }
-    // Unsuccessful Test
+
     @Test
     void zeroFillTest(){
             registrationPage.openPage().submit().checkValidation();

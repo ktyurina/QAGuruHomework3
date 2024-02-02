@@ -2,9 +2,9 @@ package guru.qa;
 
 import org.junit.jupiter.api.Test;
 import pages.TextBoxPage;
-import pages.components.BaseComponent;
+import guru.qa.config.TestConfig;
 
-public class TextBoxTest extends BaseComponent {
+public class TextBoxTest extends TestConfig {
     TextBoxPage textBoxPage = new TextBoxPage();
         @Test
         void fillFormTest() {

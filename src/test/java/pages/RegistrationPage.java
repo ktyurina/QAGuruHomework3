@@ -18,7 +18,6 @@ public class RegistrationPage {
 
         return this;
     }
-        //Credentials
     private final SelenideElement userForm = $("#userForm"),
                 firstNameInput = $("#firstName"),
                 lastNameInput = $("#lastName"),
@@ -101,10 +100,10 @@ public class RegistrationPage {
             return this;
     }
 
-    //Check
+ResultPageComponent resultPageComponent = new ResultPageComponent();
 
     public RegistrationPage checkResult(String fieldName, String value) {
-       ResultPageComponent.checkResultForm(fieldName, value);
+       resultPageComponent.checkResultForm(fieldName, value);
         return this;
     }
 
@@ -114,12 +113,9 @@ public class RegistrationPage {
         userForm.shouldHave(cssClass("was-validated"));
         firstNameInput.shouldHave(cssValue(valueName,colorRed));
         lastNameInput.shouldHave(cssValue(valueName,colorRed));
-        genderInput.$("label[for='gender-radio-1']").shouldHave(cssValue(valueName,colorRed)); //Male
-        genderInput.$("label[for='gender-radio-2']").shouldHave(cssValue(valueName,colorRed)); //Female
-        genderInput.$("label[for='gender-radio-3']").shouldHave(cssValue(valueName,colorRed)); //Other
+        genderInput.$("label[for='gender-radio-1']").shouldHave(cssValue(valueName,colorRed));
+        genderInput.$("label[for='gender-radio-2']").shouldHave(cssValue(valueName,colorRed));
+        genderInput.$("label[for='gender-radio-3']").shouldHave(cssValue(valueName,colorRed));
         numberInput.shouldHave(cssValue(valueName,colorRed));
-        // Хотела что-бы эта проверка была в классе "ResultPageComponent",
-        // но не смогла заставить её там работать.
-        // Как можно адекватно прописать её там?
     }
 }
