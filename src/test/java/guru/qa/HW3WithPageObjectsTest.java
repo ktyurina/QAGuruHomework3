@@ -15,7 +15,7 @@ public class HW3WithPageObjectsTest extends TestConfig {
                 .setLastName("Hawk")
                 .setEmail("ssss@ddd.aaa")
                 .setGender("Female")
-                .setNumber("11111111111")
+                .setPhoneNumber("11111111111")
                 .setDateOfBirth("31", "January", "2024")
                 .setSubject("English").setSubject("Computer")
                 .setHobbies("Reading").setHobbies("Music")
@@ -43,7 +43,7 @@ public class HW3WithPageObjectsTest extends TestConfig {
                 .setFirstName("Tia")
                 .setLastName("Hawk")
                 .setGender("Female")
-                .setNumber("11111111111")
+                .setPhoneNumber("11111111111")
                 .submit()
 
 

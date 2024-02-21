@@ -23,7 +23,7 @@ public class RegistrationPage {
                 lastNameInput = $("#lastName"),
                 emailInput = $("#userEmail"),
                 genderInput = $("#genterWrapper"),
-                numberInput = $("#userNumber"),
+                phoneNumberInput = $("#userNumber"),
                 calendarInput = $("#dateOfBirthInput"),
                 subjectInput = $("#subjectsInput"),
                 hobbiesInput = $("#hobbiesWrapper"),
@@ -55,8 +55,8 @@ public class RegistrationPage {
             return this;
         }
 
-        public RegistrationPage setNumber(String value) {
-            numberInput.setValue(value);
+        public RegistrationPage setPhoneNumber(String value) {
+            phoneNumberInput.setValue(value);
             return this;
         }
         public RegistrationPage setDateOfBirth(String day, String month, String year) {
@@ -116,6 +116,6 @@ ResultPageComponent resultPageComponent = new ResultPageComponent();
         genderInput.$("label[for='gender-radio-1']").shouldHave(cssValue(valueName,colorRed));
         genderInput.$("label[for='gender-radio-2']").shouldHave(cssValue(valueName,colorRed));
         genderInput.$("label[for='gender-radio-3']").shouldHave(cssValue(valueName,colorRed));
-        numberInput.shouldHave(cssValue(valueName,colorRed));
+        phoneNumberInput.shouldHave(cssValue(valueName,colorRed));
     }
 }
